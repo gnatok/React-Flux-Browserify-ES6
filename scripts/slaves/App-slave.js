@@ -8,7 +8,7 @@ export default {
 
 		setTimeout(() => {
 			deferred.resolve({
-				message: "What's up ?"
+				message: "Hello there"
 			})
 		}, 500)
 

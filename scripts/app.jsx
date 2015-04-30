@@ -1,13 +1,13 @@
 'use strict';
 
 import React from 'react';
-import HelloWorld from './components/hello-world.jsx';
+import MainComponent from './components/main.jsx';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <HelloWorld />
+        <MainComponent />
       </div>
     );
   }

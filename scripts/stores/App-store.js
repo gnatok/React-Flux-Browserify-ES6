@@ -1,14 +1,14 @@
 'use strict';
 
-import AppDispatcher from '../dispatchers/AppDispatcher.js';
-import HelloConstants from '../constants/HelloConstants.js';
+import AppDispatcher from '../dispatchers/App-dispatcher.js';
+import AppConstants from '../constants/App-constants.js';
 import {EventEmitter} from 'events';
 
 let data = {
 	message: ''
 };
 
-class HelloStore extends EventEmitter {
+class AppStore extends EventEmitter {
 
 	getState() {
 		return data;
@@ -27,16 +27,16 @@ class HelloStore extends EventEmitter {
 	}
 }
 
-let _HelloStore = new HelloStore();
+let _AppStore = new AppStore();
 
-export default _HelloStore;
+export default _AppStore;
 
 AppDispatcher.register((payload) => {
 	let action = payload.action;
 	switch(action.type) {
-		case HelloConstants.FETCHING:
+		case AppConstants.FETCHING:
 			data = action.data;
-			_HelloStore.emitChange();
+			_AppStore.emitChange();
 			break;
 		default:
 			break;
